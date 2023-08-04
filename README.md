@@ -74,3 +74,14 @@ Purge all data related with services
 ```shell
 make d-purge
 ```
+
+### Info for initial steps
+
+NEW_REPOSITORY_NAME="django_base__volodymyr_hlavnyi__step_1"
+BASE_REPOSITORY_NAME="django_base__volodymyr_hlavnyi"
+OWNER_NAME="hillel-i-python-pro-i-2023-06-23"
+
+git clone "https://github.com/${OWNER_NAME}/${BASE_REPOSITORY_NAME}.git" "${NEW_REPOSITORY_NAME}" && \
+cd "${NEW_REPOSITORY_NAME}" && \
+git remote set-url origin "https://github.com/${OWNER_NAME}/${NEW_REPOSITORY_NAME}.git" && \
+echo "Done!"
