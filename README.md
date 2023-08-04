@@ -75,13 +75,25 @@ Purge all data related with services
 make d-purge
 ```
 
-### Info for initial steps
+## Cmd for initial setup from base project
 
-NEW_REPOSITORY_NAME="django_base__volodymyr_hlavnyi__step_1"
-BASE_REPOSITORY_NAME="django_base__volodymyr_hlavnyi"
+```shell
+#!/usr/bin/env sh
+
+NEW_REPOSITORY_NAME="django_base__hlavnyi_volodymyr__step_1"
+BASE_REPOSITORY_NAME="django_base__hlavnyi_volodymyr"
 OWNER_NAME="hillel-i-python-pro-i-2023-06-23"
 
+cd /home/vladimir/develop/python/Hillel
 git clone "https://github.com/${OWNER_NAME}/${BASE_REPOSITORY_NAME}.git" "${NEW_REPOSITORY_NAME}" && \
 cd "${NEW_REPOSITORY_NAME}" && \
 git remote set-url origin "https://github.com/${OWNER_NAME}/${NEW_REPOSITORY_NAME}.git" && \
-echo "Done!"
+echo "Clone Done!"
+
+echo "Create venv..."
+cd /home/vladimir/develop/python/Hillel/"${NEW_REPOSITORY_NAME}"
+python3.11 -m venv venv
+source venv/bin/activate
+make init-dev
+cd /home/vladimir/develop/python/Hillel/"${NEW_REPOSITORY_NAME}"
+```
