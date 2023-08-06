@@ -14,3 +14,32 @@ def home_page(request):
             "title": "Django base project",
         },
     )
+
+
+def about_us_page(request):
+    # now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S")
+    text_for_page = "Short description about us"
+    return render(
+        request=request,
+        template_name="base/about_us_page.html",
+        context={
+            "text_for_page": f"{text_for_page}",
+            "title": "About us",
+        },
+    )
+
+
+def contacts_page(request):
+    # now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S")
+    text_for_page = (
+        "Our contacts:" "  phone namber: 212121212" "  email: tyruetyurey@erithyreuiyt" "  address: stree F, 4587 City"
+    )
+
+    return render(
+        request=request,
+        template_name="base/contacts_page.html",
+        context={
+            "text_for_page": f"{text_for_page}",
+            "title": "Our contacts",
+        },
+    )
