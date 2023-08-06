@@ -32,7 +32,7 @@ def about_us_page(request):
 def contacts_page(request):
     # now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S")
     text_for_page = (
-        "Our contacts:" "  phone namber: 212121212" "  email: tyruetyurey@erithyreuiyt" "  address: stree F, 4587 City"
+        "Our contacts:" "  phone number: 212121212" "  email: tyruetyurey@erithyreuiyt" "  address: stree F, 4587 City"
     )
 
     return render(
