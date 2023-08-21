@@ -1,0 +1,43 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th>Text (in) </th>
+        <th>Passkey</th>
+        <th>Text (out)</th>
+        <th>Created at</th>
+        <th>Modified at</th>
+
+    </tr>
+    </thead>
+    {% for note in object_list %}
+        <tr>
+            <th scope="row"></th>
+
+            <td>{{ note.text_in }}</td>
+            <td>{{ note.passkey }}</td>
+            <td>{{ note.text_out }}</td>
+            <td>{{ note.created_at }}</td>
+            <td>{{ note.modified_at }}</td>
+
+            <td>
+                <a href="{% url 'notes:note_edit' note.pk %}">
+                    <button class="btn btn-outline-primary" type="button">
+                        Edit
+                    </button>
+                </a>
+            </td>
+
+            <td>
+                <a href="{% url 'notes:notes_delete' note.pk %}">
+                    <button class="btn btn-outline-danger" type="button">
+                        Delete
+                    </button>
+                </a>
+            </td>
+
+
+
+        </tr>
+    {% endfor %}
+</table>

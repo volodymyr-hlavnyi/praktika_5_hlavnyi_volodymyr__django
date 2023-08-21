@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-start">
+
+        <a href="{% url 'notes:notes_list' %}">
+            <button class="btn btn-outline-primary" type="button">
+                List of Notes
+            </button>
+        </a>
+
+        <a href="{% url 'notes:notes_create' %}">
+            <button class="btn btn-outline-secondary" type="button">
+                Add Note
+            </button>
+        </a>
+
+        <a href="{% url 'notes:secretkey_list' %}">
+            <button class="btn btn-outline-primary" type="button">
+                List of pass keys
+            </button>
+        </a>
+
+        <a href="{% url 'notes:secretkey_create' %}">
+            <button class="btn btn-outline-secondary" type="button">
+                Add pass key
+            </button>
+        </a>
+
+    </form>
+</nav>

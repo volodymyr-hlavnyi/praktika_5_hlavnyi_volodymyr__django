@@ -1,8 +1,8 @@
 from django.db import models
 
 
-class Key(models.Model):
-    key = models.CharField(max_length=100)
+class SecretKey(models.Model):
+    value = models.CharField(max_length=100)
 
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -15,3 +15,8 @@ class Key(models.Model):
         blank=False,
         null=False,
     )
+
+    def __str__(self) -> str:
+        return self.value
+
+    __repr__ = __str__
