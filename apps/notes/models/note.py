@@ -26,7 +26,7 @@ class Note(models.Model):
     )
 
     def __str__(self):
-        return self.text_in
+        return f"{self.text_out} {self.created_at} {self.modified_at}"
 
     class Meta:
         ordering = ["-modified_at", "text_in"]

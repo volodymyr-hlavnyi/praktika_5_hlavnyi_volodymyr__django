@@ -7,7 +7,7 @@ def create_object_note(text_in: str, passkey_pk: int) -> Note:
     passkey = SecretKey.objects.filter(pk=passkey_pk).first()
     text_out = get_encrypt_decrypt_string(text_in, passkey.value, mode="encrypt", debug=False)
     return Note(
-        text_in=text_in,
+        text_in="",  # dont save to database
         passkey=passkey,
         text_out=text_out,
     )
