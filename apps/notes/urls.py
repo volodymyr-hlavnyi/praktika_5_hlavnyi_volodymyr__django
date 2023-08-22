@@ -12,12 +12,15 @@ urlpatterns = [
     path("delete/<int:pk>/", views.NoteDeleteView.as_view(), name="notes_delete"),
     path("deletekey/<int:pk>/", views.SecretKeyDeleteView.as_view(), name="secretkey_delete"),
     #
-    path("edit/<int:pk>/", views.NoteEditView.as_view(), name="note_edit"),
+    path("edit/<int:pk>/", views.NoteEditView.as_view(), name="notes_edit"),
     path("editkey/<int:pk>/", views.SecretKeyEditView.as_view(), name="secretkey_edit"),
+    # path("keysecret/<int:pk>/", views.SecretKeyEditView.as_view(), name="secretkey_edit"),
     #
     #    path("generate/", views.generate_contacts_view, name="contacts_generate"),
     #
-    path("create/", views.NoteCreateView.as_view(), name="notes_create"),
+    # path("create/", views.NoteCreateView.as_view(), name="notes_create"),
+    path("createsecret/", views.note_create_form_view, name="notes_createview"),
+    path("viewsecret/<int:pk>", views.NoteSecretView.as_view(), name="notes_secretview"),
     #
     path("createkey/", views.SecretKeyCreateView.as_view(), name="secretkey_create"),
     #    path("detail/<int:pk>/", views.ContactDetailView.as_view(), name="contacts_detail"),

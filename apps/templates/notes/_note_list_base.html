@@ -2,7 +2,9 @@
     <thead>
     <tr>
         <th scope="col"></th>
+        <!--
         <th>Text (in) </th>
+        -->
         <th>Passkey</th>
         <th>Text (out)</th>
         <th>Created at</th>
@@ -14,16 +16,18 @@
         <tr>
             <th scope="row"></th>
 
+            <!--
             <td>{{ note.text_in }}</td>
+            -->
             <td>{{ note.passkey }}</td>
             <td>{{ note.text_out }}</td>
             <td>{{ note.created_at }}</td>
             <td>{{ note.modified_at }}</td>
 
             <td>
-                <a href="{% url 'notes:note_edit' note.pk %}">
+                <a href="{% url 'notes:notes_secretview' note.pk %}">
                     <button class="btn btn-outline-primary" type="button">
-                        Edit
+                        View
                     </button>
                 </a>
             </td>
